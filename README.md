@@ -1,4 +1,7 @@
 # Simple Blog Website
+Ссылка на веб-страницу
+
+# https://lyublyukotikov.github.io/simple-blog-page/
 
 Этот проект представляет собой простой веб-сайт блога, разработанный с использованием React, TypeScript, Redux Toolkit и RTK Query. На главной странице отображается список статей с кратким описанием, а кнопка "Подробнее" позволяет открыть полное содержание статьи.
 
@@ -11,15 +14,16 @@
 Предусмотрен loader для отображения процесса загрузки данных.
 Структура проекта построена с учетом архитектуры FSD (Feature-Sliced Design).
 Для работы с данными использован MockApi.
+Сайт задеплоил на gh-pages
 
 
 
 ## Установка и запуск проекта
 
-1. Клонируйте репозиторий:
+1. Инструкция:
 
    ```bash
-    git clone https://github.com/yourusername/simple-blog.git
+    git clone [https://github.com/yourusername/simple-blog.git](https://github.com/lyublyukotikov/simple-blog-page.git)
     cd simple-blog
     npm install
     npm run dev
