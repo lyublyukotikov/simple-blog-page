@@ -1,8 +1,25 @@
-# React + Vite
+# Simple Blog Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот проект представляет собой простой веб-сайт блога, разработанный с использованием React, TypeScript, Redux Toolkit и RTK Query. На главной странице отображается список статей с кратким описанием, а кнопка "Подробнее" позволяет открыть полное содержание статьи.
 
-Currently, two official plugins are available:
+В проекте реализованы следующие функции:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Возможность оставлять именные комментарии под статьями.
+Возможность добавления новых статей.
+Возможность прочитать описание.
+Все формы на сайте проходят валидацию.
+Предусмотрен loader для отображения процесса загрузки данных.
+Структура проекта построена с учетом архитектуры FSD (Feature-Sliced Design).
+Для работы с данными использован MockApi.
+
+
+
+## Установка и запуск проекта
+
+1. Клонируйте репозиторий:
+
+   ```bash
+    git clone https://github.com/yourusername/simple-blog.git
+    cd simple-blog
+    npm install
+    npm run dev
