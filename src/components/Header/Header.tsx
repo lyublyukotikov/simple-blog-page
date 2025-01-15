@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../Header/Header.module.scss";
-import DynamicButton from "../UI/DynamicButton";
-import { HeaderProps } from "../models/HeaderProps";
+import DynamicButton from "../DynamicButton/DynamicButton";
+import { HeaderProps } from "../../models/HeaderProps";
 
 const Header: React.FC<HeaderProps> = ({
   openDescriptionBlog,

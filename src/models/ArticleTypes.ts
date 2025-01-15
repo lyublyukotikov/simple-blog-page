@@ -1,4 +1,4 @@
-import { Comment } from './CommentTypes';
+import { Comment } from "./CommentTypes";
 
 export interface IncomingArticle {
   id: number;
@@ -7,7 +7,6 @@ export interface IncomingArticle {
   author: string;
   comments: Comment[];
 }
-
 
 export interface OutgoingArticle {
   title: string;

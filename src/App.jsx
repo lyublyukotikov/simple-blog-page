@@ -1,14 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Импортируем BrowserRouter, Route и Routes
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Header from "./Header/Header";
-import DescriptionDrawer from "./DescriptionDrawer/DescriptionDrawer";
-import DrawerAdd from "./AddDrawer/DrawerAdd";
-import StatisticsTable from "./StatisticsTable/StatisticsTable";
+import Header from "./components/Header/Header";
+import DescriptionDrawer from "./features/Modals/DescriptionDrawer/DescriptionDrawer";
+import DrawerAdd from "./features/Modals/AddDrawer/DrawerAdd";
+import StatisticsTable from "./features/Statistics/StatisticsTable/StatisticsTable";
 import { useArticlesWithComments } from "./hooks/useArticlesWithComments";
 import { useStatistics } from "./hooks/useStatistics";
-import ArticlePage from "./ArticlePage/ArticlePage";
-import Spinner from "./Spinner/Spinner";
+import ArticlePage from "./features/Articles/ArticlePage/ArticlePage";
+import Spinner from "./components/Spinner/Spinner";
 
 function App() {
   const [showDescriptionModal, setDescriptionBlog] = React.useState(false);
@@ -31,11 +31,11 @@ function App() {
   };
 
   return (
-    <Router basename="/simple-blog-page"> {/* Добавляем basename для правильного маршрута на GitHub Pages */}
+    <Router basename="/simple-blog-page">
       <div className={`app ${isLoading ? "loading" : ""}`}>
         {/* Загрузка или ошибка */}
         {isLoading && <Spinner />}
-        
+
         {/* Заголовок */}
         <Header
           openDescriptionBlog={openDescriptionBlog}
@@ -48,8 +48,6 @@ function App() {
           totalCharacters={statistics.totalCharacters}
           totalComments={statistics.totalComments}
         />
-
-        {/* Основные маршруты */}
         <Routes>
           {/* Страница со статьями */}
           <Route
@@ -63,13 +61,10 @@ function App() {
             }
           />
 
-          {/* Другие маршруты можно добавлять здесь */}
-          {/* Например, страница добавления статьи */}
           <Route
             path="/add-article"
             element={
               <div className="add-article">
-                {/* Здесь будет форма или другая страница для добавления статьи */}
                 <DrawerAdd closeModalWindow={closeModalWindow} />
               </div>
             }

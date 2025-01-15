@@ -20,6 +20,27 @@
     overflow-y: auto;
     padding-right: 10px;
 
+    scrollbar-width: thin;
+    scrollbar-color: #ffc107 #202020;
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #202020;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #ffc107;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #e0a806;
+    }
+
     ul {
       list-style: none;
       padding: 0;
@@ -43,27 +64,6 @@
         }
       }
     }
-
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #202020;
-      border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #ffc107;
-      border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #e0a806;
-    }
-
-    scrollbar-width: thin;
-    scrollbar-color: #ffc107 #202020;
   }
 
   .addComment {
@@ -84,7 +84,6 @@
       background: #333;
       color: #ffc107;
       font-size: 0.9rem;
-      margin-bottom: 0; /* Убираем нижние отступы, чтобы пространство не менялось */
 
       @media (max-width: 768px) {
         font-size: 0.85rem;
@@ -109,23 +108,20 @@
     }
   }
 
-  /* Контейнер для поля ввода, чтобы ошибки не влияли на другие элементы */
   .inputContainer {
     position: relative;
   }
 
-  /* Стили для ошибки */
   .error {
     color: red;
     font-size: 0.85rem;
     position: absolute;
-    top: 70%; /* Ошибка будет появляться ниже поля ввода */
+    top: 70%;
     left: 0;
     margin-top: 5px;
     width: 100%;
     white-space: nowrap;
 
-    /* Мобильная версия */
     @media (max-width: 768px) {
       font-size: 0.8rem;
     }

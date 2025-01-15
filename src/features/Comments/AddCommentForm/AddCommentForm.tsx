@@ -1,8 +1,8 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import DynamicButton from "../UI/DynamicButton";
-import { commentValidationSchema } from "../utils/validationSchemas";
-import styles from "./CommentSection.module.scss";
+import DynamicButton from "../../../components/DynamicButton/DynamicButton";
+import { commentValidationSchema } from "../../../utils/validationSchemas";
+import styles from "../CommentSection/CommentSection.module.scss";
 
 interface AddCommentFormProps {
   onSubmit: (values: { username: string; newComment: string }) => Promise<void>;

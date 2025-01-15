@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import DynamicButton from "../UI/DynamicButton";
+import DynamicButton from "../../../components/DynamicButton/DynamicButton";
 import styles from "./ArticleAccordion.module.scss";
-import {ArticlePageProps } from "../models/ArticleTypes";
-import  CommentSection  from "../CommentSection/CommentSection";
+import { ArticlePageProps } from "../../../models/ArticleTypes";
+import CommentSection from "../../Comments/CommentSection/CommentSection";
 
 const ArticleAccordion: React.FC<ArticlePageProps> = ({ articles }) => {
   const [showFullTextId, setShowFullTextId] = useState<number | null>(null);
 
+  // показ всего текста
   const toggleFullText = (id: number) => {
     setShowFullTextId((prev) => (prev === id ? null : id));
   };
@@ -33,7 +34,10 @@ const ArticleAccordion: React.FC<ArticlePageProps> = ({ articles }) => {
               onClick={() => toggleFullText(article.id)}
             />
             {/* компонент с комментариями передаем id статьи и комментарий */}
-            <CommentSection articleId={article.id} comments={article.comments} />
+            <CommentSection
+              articleId={article.id}
+              comments={article.comments}
+            />
           </div>
         </div>
       ))}

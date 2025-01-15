@@ -1,4 +1,4 @@
-import { useEffect, RefObject } from 'react';
+import { useEffect, RefObject } from "react";
 
 //получает элемент и callback функцию,которая будет закрывать окно
 const useOutsideClick = (ref: RefObject<HTMLElement>, callback: () => void) => {
@@ -9,10 +9,10 @@ const useOutsideClick = (ref: RefObject<HTMLElement>, callback: () => void) => {
       }
     };
 
-    document.addEventListener('mousedown', handleClick);
+    document.addEventListener("mousedown", handleClick);
 
     return () => {
-      document.removeEventListener('mousedown', handleClick);
+      document.removeEventListener("mousedown", handleClick);
     };
   }, [ref, callback]);
 };

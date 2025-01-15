@@ -10,16 +10,16 @@
   text-align: center;
 
   @media (max-width: 1200px) {
-    padding: 20px 40px; /* Увеличиваем боковые отступы */
+    padding: 20px 40px;
   }
 
   @media (max-width: 768px) {
-    padding: 20px 20px; /* Уменьшаем боковые отступы */
-    margin: 20px 10px; /* Добавляем отступы для мобильных устройств */
+    padding: 20px 20px;
+    margin: 20px 10px;
   }
 
   @media (max-width: 480px) {
-    padding: 15px 10px; /* Компактное размещение для маленьких экранов */
+    padding: 15px 10px;
   }
 }
 

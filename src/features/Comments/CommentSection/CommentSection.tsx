@@ -1,8 +1,8 @@
 import React from "react";
-import { useAddCommentMutation } from "../services/api";
-import { Comment } from "../models/CommentTypes";
-import NoCommentsMessage from "../NoCommentsMessage/NoCommentsMessage";
-import AddCommentForm from "./AddCommentForm"; 
+import { useAddCommentMutation } from "../../../services/api";
+import { Comment } from "../../../models/CommentTypes";
+import NoCommentsMessage from "../../../components/NoCommentsMessage/NoCommentsMessage";
+import AddCommentForm from "../AddCommentForm/AddCommentForm"; 
 import styles from "./CommentSection.module.scss";
 
 interface CommentSectionProps {

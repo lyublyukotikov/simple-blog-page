@@ -1,8 +1,7 @@
 import React from "react";
 import ArticleAccordion from "../ArticleCard/ArticleAccordion";
 import styles from "./ArticlePage.module.scss";
-import {ArticlePageProps} from "../models/ArticleTypes"
-
+import { ArticlePageProps } from "../../../models/ArticleTypes";
 
 const ArticlePage: React.FC<ArticlePageProps> = ({ articles }) => {
   return (

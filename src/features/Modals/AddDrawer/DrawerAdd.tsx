@@ -1,19 +1,18 @@
 import React, { useRef } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { articleValidationSchema } from "../utils/validationSchemas";
-import { OutgoingArticle } from "../models/ArticleTypes";
+import { articleValidationSchema } from "../../../utils/validationSchemas";
+import { OutgoingArticle } from "../../../models/ArticleTypes";
 import ModalTemplate from "../ModalTemplate/ModalTemplate";
-import { useAddArticleMutation } from "../services/api";
-import Spinner from "../Spinner/Spinner";
-import ErrorModal from "../ErrorDrawer/ErrorDrawer";
-import DynamicButton from "../UI/DynamicButton"; // Импортируем DynamicButton
+import { useAddArticleMutation } from "../../../services/api";
+import Spinner from "../../../components/Spinner/Spinner";
+import ErrorModal from "../../../components/ErrorDrawer/ErrorDrawer";
+import DynamicButton from "../../../components/DynamicButton/DynamicButton";
+import { DrawerAddProps } from "../../../models/ModalTemplateProps";
 import styles from "./DrawerAdd.module.scss";
 
-const DrawerAdd: React.FC<{ closeModalWindow: () => void }> = ({
-  closeModalWindow,
-}) => {
+const DrawerAdd: React.FC<DrawerAddProps> = ({ closeModalWindow }) => {
   const drawerRef = useRef<HTMLDivElement>(null);
-  
+
   const [addArticle, { isLoading, isError }] = useAddArticleMutation();
 
   const handleSubmit = async (values: OutgoingArticle) => {
@@ -94,14 +93,8 @@ const DrawerAdd: React.FC<{ closeModalWindow: () => void }> = ({
             {isError && <ErrorModal onClose={closeModalWindow} />}
 
             <div className={styles.formActions}>
-              <DynamicButton
-                label={ "Добавить статью"}
-                onClick={() => {}}
-              />
-              <DynamicButton
-                label="Отменить"
-                onClick={closeModalWindow}
-              />
+              <DynamicButton label={"Добавить статью"} onClick={() => {}} />
+              <DynamicButton label="Отменить" onClick={closeModalWindow} />
             </div>
             {/* окно с загрузкой */}
             {(isLoading || isSubmitting) && <Spinner />}

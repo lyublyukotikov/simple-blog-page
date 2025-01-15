@@ -1,6 +1,6 @@
 import React, { ReactNode, RefObject } from "react";
 import styles from "./ModalTemplate.module.scss";
-import ModalTemplateProps from "../models/ModalTemplateProps";
+import ModalTemplateProps from "../../../models/ModalTemplateProps";
 
 const ModalTemplate: React.FC<ModalTemplateProps> = ({
   drawerRef,
