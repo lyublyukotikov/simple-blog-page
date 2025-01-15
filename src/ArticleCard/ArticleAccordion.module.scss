@@ -1,0 +1,60 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.article {
+  border: 1px solid #ffc107;
+  border-radius: 5px;
+  background: #2e2e2e;
+  overflow: hidden;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+    background: #333;
+    color: #ffc107;
+
+    &:hover {
+      background: #444;
+    }
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .toggleButton {
+    background: none;
+    border: none;
+    color: #ffc107;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    &:hover {
+      color: #cc9a06;
+    }
+  }
+
+  .content {
+    padding: 15px;
+    background: #1a1a1a;
+    color: #fff;
+    animation: slideDown 0.3s ease;
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}

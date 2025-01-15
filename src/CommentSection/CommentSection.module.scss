@@ -1,0 +1,137 @@
+.commentsSection {
+  margin-top: 20px;
+
+  h4 {
+    margin-bottom: 10px;
+    color: #ffc107;
+    font-size: 1.2rem;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .commentsContainer {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 10px;
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        background: #1a1a1a;
+        color: #fff;
+        padding: 8px 10px;
+        margin-bottom: 8px;
+        border-radius: 5px;
+        font-size: 0.95rem;
+
+        @media (max-width: 768px) {
+          padding: 6px 8px;
+          font-size: 0.9rem;
+        }
+
+        @media (max-width: 480px) {
+          padding: 5px 6px;
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #202020;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #ffc107;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #e0a806;
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: #ffc107 #202020;
+  }
+
+  .addComment {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+
+    @media (min-width: 769px) {
+      flex-direction: row;
+    }
+
+    input {
+      flex: 1;
+      padding: 8px;
+      border: 2px solid #ffc107;
+      border-radius: 5px;
+      background: #333;
+      color: #ffc107;
+      font-size: 0.9rem;
+      margin-bottom: 0; /* Убираем нижние отступы, чтобы пространство не менялось */
+
+      @media (max-width: 768px) {
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.8rem;
+      }
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #cc9a06;
+    }
+
+    button {
+      align-self: flex-start;
+
+      @media (min-width: 769px) {
+        align-self: center;
+      }
+    }
+  }
+
+  /* Контейнер для поля ввода, чтобы ошибки не влияли на другие элементы */
+  .inputContainer {
+    position: relative;
+  }
+
+  /* Стили для ошибки */
+  .error {
+    color: red;
+    font-size: 0.85rem;
+    position: absolute;
+    top: 70%; /* Ошибка будет появляться ниже поля ввода */
+    left: 0;
+    margin-top: 5px;
+    width: 100%;
+    white-space: nowrap;
+
+    /* Мобильная версия */
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.75rem;
+    }
+  }
+}

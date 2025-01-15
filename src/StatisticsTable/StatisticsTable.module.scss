@@ -1,0 +1,92 @@
+.statsContainer {
+  margin: 40px auto 0px;
+  padding: 20px;
+  background: linear-gradient(135deg, #2e2e2e, #1a1a1a);
+  border: 1px solid #ffc107;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  max-width: 800px;
+  text-align: center;
+
+  @media (max-width: 1200px) {
+    padding: 20px 40px; /* Увеличиваем боковые отступы */
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 20px; /* Уменьшаем боковые отступы */
+    margin: 20px 10px; /* Добавляем отступы для мобильных устройств */
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px 10px; /* Компактное размещение для маленьких экранов */
+  }
+}
+
+.title {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #ffc107;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
+}
+
+.statsTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin-top: 15px;
+
+  th {
+    background: #333;
+    color: #ffc107;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #ffc107;
+    font-size: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
+  }
+
+  td {
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.85rem;
+      padding: 8px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+      padding: 6px;
+    }
+  }
+
+  tr:nth-child(even) {
+    background: #2e2e2e;
+  }
+
+  tr:nth-child(odd) {
+    background: #1a1a1a;
+  }
+
+  tr:hover {
+    background: #444;
+  }
+}

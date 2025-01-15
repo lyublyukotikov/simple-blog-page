@@ -1,0 +1,15 @@
+.articlePage {
+  padding: 10px;
+  font-family: 'Cinzel', serif;
+ 
+  color: #ffc107;
+
+  .articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+ 
+  }
+
+
+}
