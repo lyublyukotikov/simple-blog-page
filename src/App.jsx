@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Импортируем BrowserRouter, Route и Routes
 
 import Header from "./Header/Header";
 import DescriptionDrawer from "./DescriptionDrawer/DescriptionDrawer";
@@ -30,71 +31,93 @@ function App() {
   };
 
   return (
-    <div className={`app ${isLoading ? "loading" : ""}`}>
-      {/* Загрузка или ошибка */}
-      {isLoading && <Spinner />}
-      
-      {/* Заголовок */}
-      <Header
-        openDescriptionBlog={openDescriptionBlog}
-        openAddDrawer={openAddDrawer}
-      />
+    <Router basename="/simple-blog-page"> {/* Добавляем basename для правильного маршрута на GitHub Pages */}
+      <div className={`app ${isLoading ? "loading" : ""}`}>
+        {/* Загрузка или ошибка */}
+        {isLoading && <Spinner />}
+        
+        {/* Заголовок */}
+        <Header
+          openDescriptionBlog={openDescriptionBlog}
+          openAddDrawer={openAddDrawer}
+        />
 
-      {/* Статистика */}
-      <StatisticsTable
-        totalArticles={statistics.totalArticles}
-        totalCharacters={statistics.totalCharacters}
-        totalComments={statistics.totalComments}
-      />
+        {/* Статистика */}
+        <StatisticsTable
+          totalArticles={statistics.totalArticles}
+          totalCharacters={statistics.totalCharacters}
+          totalComments={statistics.totalComments}
+        />
 
-      {/* Контент статей */}
-      {!isLoading && (
-        <div className="articles">
-          <ArticlePage articles={articlesWithComments} />
-        </div>
-      )}
+        {/* Основные маршруты */}
+        <Routes>
+          {/* Страница со статьями */}
+          <Route
+            path="/"
+            element={
+              !isLoading && (
+                <div className="articles">
+                  <ArticlePage articles={articlesWithComments} />
+                </div>
+              )
+            }
+          />
 
-      {/* Модальные окна */}
-      {showDescriptionModal && (
-        <div
-          className="modal-overlay"
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            zIndex: 9999,
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <DescriptionDrawer closeModalWindow={closeModalWindow} />
-        </div>
-      )}
+          {/* Другие маршруты можно добавлять здесь */}
+          {/* Например, страница добавления статьи */}
+          <Route
+            path="/add-article"
+            element={
+              <div className="add-article">
+                {/* Здесь будет форма или другая страница для добавления статьи */}
+                <DrawerAdd closeModalWindow={closeModalWindow} />
+              </div>
+            }
+          />
+        </Routes>
 
-      {showAddDrawer && (
-        <div
-          className="modal-overlay"
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            zIndex: 9999,
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <DrawerAdd closeModalWindow={closeModalWindow} />
-        </div>
-      )}
-    </div>
+        {/* Модальные окна */}
+        {showDescriptionModal && (
+          <div
+            className="modal-overlay"
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              zIndex: 9999,
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <DescriptionDrawer closeModalWindow={closeModalWindow} />
+          </div>
+        )}
+
+        {showAddDrawer && (
+          <div
+            className="modal-overlay"
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              zIndex: 9999,
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <DrawerAdd closeModalWindow={closeModalWindow} />
+          </div>
+        )}
+      </div>
+    </Router>
   );
 }
 
