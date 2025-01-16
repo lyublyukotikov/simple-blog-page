@@ -23,7 +23,7 @@
 1. Инструкция:
 
    ```bash
-    git clone [https://github.com/yourusername/simple-blog.git](https://github.com/lyublyukotikov/simple-blog-page.git)
+    git clone https://github.com/lyublyukotikov/simple-blog-page.git
     cd simple-blog
     npm install
     npm run dev
